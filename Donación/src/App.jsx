@@ -4,8 +4,6 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 
 function App() {
-  
-
   const position = [-23.442503, -58.443832]
         
   return(
@@ -15,13 +13,13 @@ function App() {
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
     {
-      datos.map((local, index) => {
-        return <Marker key={index} position={[local.latitud, local.longitud]}>
+      datos.map((local) => {
+        return <Marker position={[local.latitud, local.longitud]}>
         <Popup>
-          Local: {local.local_donacion} <br />
-          Dirección: {local.direccion} <br />
-          Hora de apertura: {local.hora_apertura} <br /> 
-          Hora de cierre: {local.hora_cierre}
+          <span className="omar">Local: {local.local_donacion}</span><br />
+          <span className="omar">Dirección: {local.direccion}</span><br />
+          <span className="omar">Hora de apertura: {local.hora_apertura}</span><br /> 
+          <span className="omar">Hora de cierre: {local.hora_cierre}</span>
         </Popup>
       </Marker>
       })
