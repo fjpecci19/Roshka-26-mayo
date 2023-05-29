@@ -1,13 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import {createBrowserRouter, Link, RouterProvider} from "react-router-dom"
+import Mapa from './views/Mapa.jsx'
+import Solicitudes from './views/Solicitudes.jsx'
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />  
+    path: "",
+    element: <App/>
   },
+  {
+    path: "Mapa",
+    element: <Mapa/>
+  },
+  {
+    path: "Solicitudes",
+    element: <Solicitudes/>
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
