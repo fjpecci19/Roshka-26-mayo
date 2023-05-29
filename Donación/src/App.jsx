@@ -19,10 +19,10 @@ function App() {
         <Link to={"/Perfil"}>Perfil</Link>
       </div>
       <div className="column">
-        Login
+        <Link to={"/Login"}>Login</Link>
       </div>
       <div className="column">
-        Certificados
+        <Link to={"/Certificados"}>Certificados</Link>
       </div>
     </div>
     <h2>Inicio</h2>
