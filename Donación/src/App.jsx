@@ -21,8 +21,8 @@ function App() {
       <div className="column">
         Certificados
       </div>
-
     </div>
+    <img src="images/Goku.jpg"/><img src="images/Goku.jpg"/>
   </div>
   )
 }
