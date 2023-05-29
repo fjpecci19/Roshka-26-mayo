@@ -3,14 +3,35 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import { Link } from 'react-router-dom';
 import datos from '../data/datos'
+import "./Mapa.css"
 
 function Mapa() {
     const position = [-23.442503, -58.443832]
 
     return (
     <div>
+        <div className="container">
+            <div className="column">
+                <Link to={"http://localhost:5173/"}>Inicio</Link>
+            </div>
+            <div className="column">
+                <Link to={"/Mapa"}>Mapa</Link>
+            </div>
+            <div className="column">
+                <Link to={"/Solicitudes"}>Solicitudes</Link>
+            </div>
+            <div className="column">
+                <Link to={"/Perfil"}>Perfil</Link>
+            </div>
+            <div className="column">
+                <Link to={"/Login"}>Login</Link>
+            </div>
+            <div className="column">
+                <Link to={"/Certificados"}>Certificados</Link>
+            </div>
+        </div>
         <div>
-            <h2>Puntos de donación</h2>
+            <h2>Mapa</h2>
         </div>
         <MapContainer className="coso" center={position} zoom={5} scrollWheelZoom={false}>
             <TileLayer

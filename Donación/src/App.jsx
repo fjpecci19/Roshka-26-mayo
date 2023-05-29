@@ -7,13 +7,16 @@ function App() {
   <div>
     <div className="container">
       <div className="column">
+        <Link to={"http://localhost:5173/"}>Inicio</Link>
+      </div>
+      <div className="column">
         <Link to={"/Mapa"}>Mapa</Link>
       </div>
       <div className="column">
         <Link to={"/Solicitudes"}>Solicitudes</Link>
       </div>
       <div className="column">
-        Perfil
+        <Link to={"/Perfil"}>Perfil</Link>
       </div>
       <div className="column">
         Login
@@ -22,7 +25,7 @@ function App() {
         Certificados
       </div>
     </div>
-    <img src="images/Goku.jpg"/><img src="images/Goku.jpg"/>
+    <h2>Inicio</h2>
   </div>
   )
 }
