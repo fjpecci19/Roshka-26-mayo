@@ -18,10 +18,10 @@ function App() {
   <div>
     <div className="container">
       <div className="column">
-        Mapa
+        <Link to={"http://localhost:5173/"}>Mapa</Link>
       </div>
       <div className="column">
-        Solicitudes
+        <Link to={"http://localhost:5173/"}>Solicitudes</Link>
       </div>
       <div className="column">
         Perfil
@@ -32,6 +32,9 @@ function App() {
       <div className="column">
         Certificados
       </div>
+    </div>
+    <div>
+      <h2>Puntos de donación</h2>
     </div>
       <MapContainer className="coso" center={position} zoom={5} scrollWheelZoom={false}>
         <TileLayer
