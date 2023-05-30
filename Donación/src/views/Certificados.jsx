@@ -25,16 +25,16 @@ function Certificados() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Certificados</h2>
+      <h2>Certificados <Link to={"/NewCertificado"}>+</Link></h2>
       <div className="certif">
         <h2></h2>
         <div className="title">Certificado de donación
-        <br /><br /><div className="datos">Establecimiento: FCA CAMPUS</div>
-        <br /><div className="datos">Apellido:</div><div className="datos2">a</div>
-        <br /><div className="datos">Nombre: Alan Toro</div>
-        <br /><div className="datos">Sexo: Masculino</div>
-        <br /><div className="datos">Cédula: 2372892</div>
-        <br /><div className="datos">Fecha de donación: 12/4/2012</div>
+        <br /><br /><div className="datos"><span>Establecimiento:</span><span>FCA CAMPUS</span></div>
+        <br /><div className="datos"><span>Apellido:</span><span>Toro</span></div>
+        <br /><div className="datos"><span>Nombre:</span><span>Alan</span></div>
+        <br /><div className="datos"><span>Sexo:</span><span>Masculino</span></div>
+        <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
+        <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>
         </div>
       </div>
     </div>
