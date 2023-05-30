@@ -32,6 +32,7 @@ function Login() {
           </div>
       </div>
       <h2>Donación Sangre Paraguay</h2>
+      <h2>Iniciar Sesión</h2>
       <h2><img src="images/cora.jpg"/></h2>
       <div className="campos">Email</div>
       <h2><input type="Email" placeholder="Email"/></h2>
