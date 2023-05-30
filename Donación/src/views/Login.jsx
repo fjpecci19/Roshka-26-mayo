@@ -40,7 +40,7 @@ function Login() {
       <h2><button onClick={mostrarContraseña}>Mostrar 👀</button></h2>
       <h2><input type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
       <div className="cuadrado">
-        <div className="textouno">Iniciar Sesión</div><br />
+        <div className="textouno" type="submit">Iniciar Sesión</div><br />
         <div className="texto"><Link to={"/Registros"}>Registrarse</Link></div><br/>
         <div className="texto"><Link to={"/ReestablecerContraseña"}>¿Olvidaste tu Contraseña?</Link></div>
       </div>
