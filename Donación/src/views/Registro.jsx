@@ -36,7 +36,8 @@ function Registros() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Registro</h2>
+      <div className="titulo">Registro</div>
+      <h2></h2>
       <div className="campos">Nombres</div>
       <h2><input type="text" placeholder="Nombres"/></h2>
       <div className="campos">Apellidos</div>

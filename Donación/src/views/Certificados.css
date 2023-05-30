@@ -3,3 +3,34 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
+
+.certif{
+    background-color: lightgray;
+    text-align: center;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 4px;
+}
+
+.title{
+    display: inline-block;
+    color: red;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 4px;
+}
+
+.datos{
+    color: black;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.datos2{
+    color: black;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}

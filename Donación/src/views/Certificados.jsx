@@ -26,6 +26,17 @@ function Certificados() {
           </div>
       </div>
       <h2>Certificados</h2>
+      <div className="certif">
+        <h2></h2>
+        <div className="title">Certificado de donación
+        <br /><br /><div className="datos">Establecimiento: FCA CAMPUS</div>
+        <br /><div className="datos">Apellido:</div><div className="datos2">a</div>
+        <br /><div className="datos">Nombre: Alan Toro</div>
+        <br /><div className="datos">Sexo: Masculino</div>
+        <br /><div className="datos">Cédula: 2372892</div>
+        <br /><div className="datos">Fecha de donación: 12/4/2012</div>
+        </div>
+      </div>
     </div>
   )
 }

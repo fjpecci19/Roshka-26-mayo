@@ -51,3 +51,9 @@ select{
     cursor: pointer;
     color: black;
 }
+
+.titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
