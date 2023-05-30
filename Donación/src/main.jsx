@@ -5,6 +5,8 @@ import Mapa from './views/Mapa.jsx'
 import Solicitudes from './views/Solicitudes.jsx'
 import Perfil from './views/Perfil.jsx'
 import Login from './views/Login.jsx'
+import Registros from "./views/Registro.jsx"
+import Contraseña from './views/Contraseña.jsx'
 import Certificados from './views/Certificados.jsx'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "Certificados",
     element: <Certificados/>
+  },
+  {
+    path: "Registros",
+    element: <Registros/>
+  },
+  {
+    path: "ReestablecerContraseña",
+    element: <Contraseña/>
   }
 ])
 
