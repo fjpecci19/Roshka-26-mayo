@@ -25,8 +25,14 @@ function Login() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Login</h2>
-    </div>
+      <h2>Donación Sangre Paraguay</h2>
+      <h2><img src="images/cora.jpg"/></h2>
+      <div className="coso">Email</div>
+      <h2><input type="text" /></h2>
+      <h2></h2>
+      <div className="coso">Contraseña</div>
+      <h2><input type="text" /></h2>
+      </div>
   )
 }
 
