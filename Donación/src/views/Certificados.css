@@ -16,6 +16,7 @@ h2{
     display: inline-block;
     color: red;
     background-color: white;
+    border: 3px solid red;
     width: 500px;
     height: 500px;
     border-radius: 4px;

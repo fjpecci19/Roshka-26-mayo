@@ -16,6 +16,7 @@ h2{
     display: inline-block;
     color: red;
     background-color: white;
+    border: 3px solid red;
     width: 500px;
     height: 400px;
     border-radius: 4px;
@@ -34,7 +35,7 @@ h2{
     height: 20px;
 }
 
-select{
+.selectt{
     width: 200px;
     height: 20px;
     font-size: 15px;

@@ -29,13 +29,14 @@ function NewCertificado() {
     <div className="newcertif">
         <div className="taitol">Nuevo certificado 
         <br /><br /><div className="relleno"><span>Fecha de donación</span><span><input className="inpuut" type="date"/></span></div>
-        <br /><br /><div className="relleno"><span>Centro</span><span><select>
+        <br /><br /><div className="relleno"><span>Centro</span><span><select className="selectt">
             <option>Asunción</option>
             <option>Caaguazú</option>
             <option>Ciudad del este</option>
             </select></span></div>
         </div>
         <div><button className="buttoon">Generar certificado</button></div>
+        <div><Link to={"/Certificados"}><button className="buttoon">Cancelar</button></Link></div>
     </div>
   </div>
   )

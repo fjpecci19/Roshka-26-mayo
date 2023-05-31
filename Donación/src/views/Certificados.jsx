@@ -25,7 +25,7 @@ function Certificados() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Certificados <Link to={"/NewCertificado"}>+</Link></h2>
+      <h2>Certificados</h2>
       <div className="certif">
         <h2></h2>
         <div className="title">Certificado de donación
@@ -35,6 +35,7 @@ function Certificados() {
         <br /><div className="datos"><span>Sexo:</span><span>Masculino</span></div>
         <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
         <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>
+        <h2><Link to={"/NewCertificado"}>Nuevo certificado+</Link></h2>
         </div>
       </div>
     </div>

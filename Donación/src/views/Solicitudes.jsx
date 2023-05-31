@@ -26,6 +26,41 @@ function Solicitudes() {
         </div>
       </div>
       <h2>Solicitudes</h2>
+      <div className="campos">Nombre y apellido</div>
+      <h2><input className="input" type="text" placeholder="Nombre y apellido"/></h2>
+      <div className="campos">Cédula</div>
+      <h2><input className="input" type="text" placeholder="Cédula"/></h2>
+      <div className="campos">Nombre</div>
+      <h2>
+        <select>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>O+</option>
+          <option>O-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+        </select>
+      </h2>
+      <div className="campos">Establecimiento</div>
+      <h2>
+        <select>
+          <option>FCA CAMPUS</option>
+          <option>El Cantaro</option>
+          <option>SODEP</option>
+          <option>Roshka</option>
+        </select>
+      </h2>
+      <div className="campos">Volumen</div>
+      <h2><input type="text" placeholder="Volumen"/></h2>
+      <div className="campos">Fecha límite</div>
+      <h2><input type="date"/></h2>
+      <div className="campos">Teléfono</div>
+      <h2><input type="text" placeholder="Teléfono"/></h2>
+      <div className="campos">Descripción</div>
+      <h2><input className="des" type="text" placeholder="Descripción"/></h2>
+      <br /><h2><button className="buuttoon">Ingresar</button></h2>
     </div>
   )
 }

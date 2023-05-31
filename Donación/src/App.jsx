@@ -26,6 +26,7 @@ function App() {
       </div>
     </div>
     <h2>Inicio</h2>
+    <h2><img className="imag" src="images/apple.jpg"/></h2>
   </div>
   )
 }
