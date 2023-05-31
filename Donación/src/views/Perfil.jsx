@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Perfil.css"
 
 function Perfil() {
+    const [enviar, enviada] = useState(true)
+
+    const solicitud = () => {
+        enviada(!enviar)
+    }
+
   return (
     <div>
       <div className="container">
@@ -25,19 +31,21 @@ function Perfil() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Perfil</h2>
-      <div className="nom">Alan Toro</div>
-      <h2><img src="images/Perfil.jpg"/></h2>
-      <div className="nom">Fecha de nacimiento: 19/5/2001</div>
+      <h2>Perfil<h2 className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></h2></h2>
+      <h2><div className="section">
       <h2></h2>
-      <div className="nom">Email: raul@gmail.com</div>
+      <div className="nom"><span>Nombre:</span><span>Alan Toro</span></div>
       <h2></h2>
-      <div className="nom">Última donación: 19/5/2011</div>
+      <div className="nom"><span>Fecha de nacimiento:</span><span>22/10/1999</span></div>
       <h2></h2>
-      <div className="nom">Sexo: Masculino</div>
+      <div className="nom"><span>Email:</span><span>alan@gmail.com</span></div>
       <h2></h2>
-      <div className="nom">CI: 4314678</div>
+      <div className="nom"><span>Última donación:</span><span>11/22/2022</span></div>
       <h2></h2>
+      <div className="nom"><span>Sexo:</span><span>Masculino</span></div>
+      <h2></h2>
+      <div className="nom"><span>CI:</span><span>4556730</span></div>
+      </div></h2>
       <h2><div className="cuadro"><div className="inside">Editar información</div></div></h2>
       <h2><div className="cuadro"><div className="inside">Cambiar Contraseña</div></div></h2>
       <h2><div className="cuadro"><div className="inside">Cerrar Sesión</div></div></h2>

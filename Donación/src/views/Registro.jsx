@@ -14,6 +14,18 @@ function Registros() {
         edit(!show)
     }
 
+    const verificarIgualdad = () => {
+        const cont = document.getElementById("cont").value;
+        const conf = document.getElementById("conf").value;
+      
+        if (cont.trim() === "" || conf.trim() === "") {
+            alert("Por favor, ingresa ambas contraseñas");
+        } else if (cont !== conf) {
+            alert("Las contraseñas no coinciden");
+        }
+}
+    
+
     return (
     <div>
       <div className="container">
@@ -54,14 +66,14 @@ function Registros() {
       <h2><input type="date"/></h2>
       <div className="campos">Email</div>
       <h2><input type="email" placeholder="Email"/></h2>
-      <div className="campos">Contraseña</div>
+      <div className="campos" id="cont">Contraseña</div>
       <h2><button onClick={mostrarContraseña}>Mostrar 👀</button></h2>
       <h2><input type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
-      <div className="campos">Confirmar Contraseña</div>
+      <div className="campos" id="conf">Confirmar Contraseña</div>
       <h2><button onClick={showContraseña}>Mostrar 👀</button></h2>
       <h2><input type={show ? "text" : "password"} placeholder="Confirmar Contraseña"/></h2>
       <div className="cuadrado">
-        <div className="textooo">Registrarse</div>
+        <button className="textooo" onClick={verificarIgualdad}>Registrarse</button>
       </div>
     </div>
   )

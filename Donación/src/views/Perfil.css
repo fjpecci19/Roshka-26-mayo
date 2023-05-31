@@ -4,15 +4,9 @@ h2{
     font-size: 20px;
 }
 
-.nom{
-    text-align: center;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 img{
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 60px;
 }
 
 img:hover{
@@ -30,13 +24,37 @@ img:hover{
     display: inline-block;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    background-color: red;
+    font-size: 15px;
+    background-color: lightgray;
     width: 400px;
     height: 30px;
 }
 
 .inside:hover{
     cursor: pointer;
-    color: white;
+    color: red;
+}
+
+.section{
+    display: inline-block;
+    color: red;
+    background-color: white;
+    border: 3px solid red;
+    width: 500px;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.nom{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.amigo:hover{
+    cursor: pointer;
+    color: red;
 }
