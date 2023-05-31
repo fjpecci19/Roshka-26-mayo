@@ -25,7 +25,7 @@ function App() {
         <Link to={"/Certificados"}>Certificados</Link>
       </div>
     </div>
-    <h2>Inicio</h2>
+    <h2>¡Bienvenido a la página de donación de sangre!</h2>
     <h2><img className="imag" src="images/apple.jpg"/></h2>
   </div>
   )
