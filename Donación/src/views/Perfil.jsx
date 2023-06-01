@@ -31,7 +31,7 @@ function Perfil() {
               <Link to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Perfil<h2 className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></h2></h2>
+      <h2>Perfil<div className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></div></h2>
       <h2><div className="section">
       <h2></h2>
       <div className="nom"><span>Nombre:</span><span>Alan Toro</span></div>

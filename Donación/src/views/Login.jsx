@@ -14,11 +14,10 @@ function Login() {
         event.preventDefault()
         const email = event.target.elements.email.value
         const password = event.target.elements.password.value
-        axios.post("http://192.168.16.90:8000/api/login/", {
-            "email": email,
-            "password": password
-        }).then(result => {
-            console.log(result.data)
+        axios.post("http://192.168.16.90:8000/api/login/", {"email": email, "password": password})
+        .then(result => {
+            alert("Sesión iniciada")
+            window.location.href = "/Perfil"
         })
     }
 
