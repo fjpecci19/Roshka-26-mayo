@@ -25,13 +25,16 @@ function Registros() {
         const email = event.target.elements.email.value
         const contra = event.target.elements.contra.value
         const confirm = event.target.elements.confirm.value
+        if (contra != confirm){
+            alert("Las contraseñas no coinciden")
+            return 
+        }
         axios.post("http://192.168.16.90:8000/api/registro/", {"name": nombres, "surname": apellidos, "nro_cedula": ci, "sexo": sex,
          "fecha_nacimiento": fechanac, "email": email, "password": contra})
          .then(result => {
+            alert("Cuenta creada!")
             console.log(result.data)
-         }).catch(error => {
-            console.log(error)
-         })  
+         })
     }
 
     return (

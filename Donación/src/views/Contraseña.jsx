@@ -28,6 +28,7 @@ function Contraseña() {
       <h2>Enviaremos un correo para reestablecer tu contraseña</h2>
       <h2><input type="email" placeholder="Ingresa tu e-mail"/></h2>
       <h2><button className="buuttoon" type="submit">Enviar</button></h2>
+      <h2><button className="buuttoon" type="submit"><Link className="Linkk" to={"/Login"}>Volver</Link></button></h2>
     </div>
   )
 }

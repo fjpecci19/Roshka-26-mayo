@@ -18,6 +18,18 @@ function Login() {
         .then(result => {
             alert("Sesión iniciada")
             window.location.href = "/Perfil"
+        }).catch(error => {
+            if (!email || ! password){
+                alert("Por favor, completa tus datos")
+            }else if (error.response){
+                if (error.response.status === 404){
+                    alert("Correo electrónico no registrado")
+                }else if (error.response.status === 401){
+                    alert("Contraseña incorrecta")
+                }else if (error.response.status === 404){
+                    alert("Correo electrónico inexistente")
+                }
+            }
         })
     }
 
