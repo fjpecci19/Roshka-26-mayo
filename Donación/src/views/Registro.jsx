@@ -2,6 +2,7 @@ import React from 'react'
 import "./Registros.css"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
 
 function Registros() {
     const [mostrar, editar] = useState(false)
@@ -14,67 +15,76 @@ function Registros() {
         edit(!show)
     }
 
-    const verificarIgualdad = () => {
-        const cont = document.getElementById("cont").value;
-        const conf = document.getElementById("conf").value;
-      
-        if (cont.trim() === "" || conf.trim() === "") {
-            alert("Por favor, ingresa ambas contraseñas");
-        } else if (cont !== conf) {
-            alert("Las contraseñas no coinciden");
-        }
-}
-    
+    const registroHandle = (event) => {
+        event.preventDefault()
+        const nombres = event.target.elements.nombres.value
+        const apellidos = event.target.elements.apellidos.value
+        const ci = event.target.elements.ci.value
+        const sex = event.target.elements.sex.value
+        const fechanac = event.target.elements.fechanac.value
+        const email = event.target.elements.email.value
+        const contra = event.target.elements.contra.value
+        const confirm = event.target.elements.confirm.value
+        axios.post("http://192.168.16.90:8000/api/registro/", {"name": nombres, "surname": apellidos, "nro_cedula": ci, "sexo": sex,
+         "fecha_nacimiento": fechanac, "email": email, "password": contra})
+         .then(result => {
+            console.log(result.data)
+         }).catch(error => {
+            console.log(error)
+         })  
+    }
 
     return (
     <div>
       <div className="container">
           <div className="column">
-              <Link to={"http://localhost:5173/"}>Inicio</Link>
+              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
           </div>
           <div className="column">
-              <Link to={"/Mapa"}>Mapa</Link>
+              <Link className="Link" to={"/Mapa"}>Mapa</Link>
           </div>
           <div className="column">
-              <Link to={"/Solicitudes"}>Solicitudes</Link>
+              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
           </div>
           <div className="column">
-              <Link to={"/Perfil"}>Perfil</Link> 
+              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
           </div>
           <div className="column">
-              <Link to={"/Login"}>Login</Link> 
+              <Link className="Link" to={"/Login"}>Login</Link> 
           </div>
           <div className="column">
-              <Link to={"/Certificados"}>Certificados</Link>
+              <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <div className="titulo">Registro</div>
-      <h2></h2>
-      <div className="campos">Nombres</div>
-      <h2><input type="text" placeholder="Nombres"/></h2>
-      <div className="campos">Apellidos</div>
-      <h2><input type="text" placeholder="Apellidos"/></h2>
-      <div className="campos">Cédula de Identidad</div>
-      <h2><input type="text" placeholder="Cédula de Identidad"/></h2>
-      <div className="campos">Sexo</div>
-      <h2><select>
-        <option>Masculino</option>
-        <option>Femenino</option>
-        </select>
-      </h2>
-      <div className="campos">Fecha de nacimiento</div>
-      <h2><input type="date"/></h2>
-      <div className="campos">Email</div>
-      <h2><input type="email" placeholder="Email"/></h2>
-      <div className="campos" id="cont">Contraseña</div>
-      <h2><button onClick={mostrarContraseña}>Mostrar 👀</button></h2>
-      <h2><input type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
-      <div className="campos" id="conf">Confirmar Contraseña</div>
-      <h2><button onClick={showContraseña}>Mostrar 👀</button></h2>
-      <h2><input type={show ? "text" : "password"} placeholder="Confirmar Contraseña"/></h2>
-      <div className="cuadrado">
-        <button className="textooo" onClick={verificarIgualdad}>Registrarse</button>
-      </div>
+      <form onSubmit={registroHandle}>
+        <div className="titulo">Registro</div>
+        <h2></h2>
+        <div className="campoos">Nombres</div>
+        <h2><input name="nombres" type="text" placeholder="Nombres"/></h2>
+        <div className="campoos">Apellidos</div>
+        <h2><input name="apellidos" type="text" placeholder="Apellidos"/></h2>
+        <div className="campoos">Cédula de Identidad</div>
+        <h2><input name= "ci" type="text" placeholder="Cédula de Identidad"/></h2>
+        <div className="campoos">Sexo</div>
+        <h2><select name="sex">
+            <option>Masculino</option>
+            <option>Femenino</option>
+            </select>
+        </h2>
+        <div className="campoos">Fecha de nacimiento</div>
+        <h2><input name="fechanac" type="date"/></h2>
+        <div className="campoos">Email</div>
+        <h2><input name="email" type="email" placeholder="Email"/></h2>
+        <div className="campoos" id="cont">Contraseña</div>
+        <h2><button type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2>
+        <h2><input name="contra" type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
+        <div className="campoos" id="conf">Confirmar Contraseña</div>
+        <h2><button type="button" onClick={showContraseña}>Mostrar 👀</button></h2>
+        <h2><input name= "confirm" type={show ? "text" : "password"} placeholder="Confirmar Contraseña"/></h2>
+        <div className="cuadrado">
+            <button className="textooo">Registrarse</button>
+        </div>
+      </form>
     </div>
   )
 }

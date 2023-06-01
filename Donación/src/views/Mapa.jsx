@@ -12,26 +12,26 @@ function Mapa() {
     <div>
         <div className="container">
             <div className="column">
-                <Link to={"http://localhost:5173/"}>Inicio</Link>
+                <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
             </div>
             <div className="column">
-                <Link to={"/Mapa"}>Mapa</Link>
+                <Link className="Link" to={"/Mapa"}>Mapa</Link>
             </div>
             <div className="column">
-                <Link to={"/Solicitudes"}>Solicitudes</Link>
+                <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
             </div>
             <div className="column">
-                <Link to={"/Perfil"}>Perfil</Link>
+                <Link className="Link" to={"/Perfil"}>Perfil</Link>
             </div>
             <div className="column">
-                <Link to={"/Login"}>Login</Link>
+                <Link className="Link" to={"/Login"}>Login</Link>
             </div>
             <div className="column">
-                <Link to={"/Certificados"}>Certificados</Link>
+                <Link className="Link" to={"/Certificados"}>Certificados</Link>
             </div>
         </div>
         <div>
-            <h2>Mapa</h2>
+            <h2 className="titulo">Mapa</h2>
         </div>
         <MapContainer className="coso" center={position} zoom={5} scrollWheelZoom={false}>
             <TileLayer

@@ -4,13 +4,13 @@ h2{
     font-size: 20px;
 }
 
-.campos{
+.campoos{
     text-align: center;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     height: 25px;
-    border: 1px solid lightgray;
+    border: 1px solid white;
 }
 
 input{
@@ -30,7 +30,7 @@ select{
 }
 
 .cuadrado{
-    background-color: lightgray;
+    background-color: white;
     text-align: center;
     height: 40px;
     font-size: 30px;
@@ -43,7 +43,7 @@ select{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     width: 200px;
-    height: 30px;
+    height: 32px;
 }
 
 .textooo:hover{
@@ -55,4 +55,5 @@ select{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
+    color: red;
 }

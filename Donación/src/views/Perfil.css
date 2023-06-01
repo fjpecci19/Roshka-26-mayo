@@ -17,7 +17,7 @@ img:hover{
     text-align: center;
     height: 40px;
     font-size: 30px;
-    background-color: lightgray;
+    background-color: white;
 }
 
 .inside{
@@ -25,7 +25,7 @@ img:hover{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    background-color: lightgray;
+    background-color: white;
     width: 400px;
     height: 30px;
 }
@@ -41,7 +41,7 @@ img:hover{
     background-color: white;
     border: 3px solid red;
     width: 500px;
-    height: 300px;
+    height: 350px;
     border-radius: 4px;
 }
 
@@ -55,6 +55,16 @@ img:hover{
 }
 
 .amigo:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.Linkk{
+    color: black;
+    text-decoration: none;
+}
+
+.Linkk:hover{
     cursor: pointer;
     color: red;
 }

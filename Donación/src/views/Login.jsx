@@ -25,38 +25,38 @@ function Login() {
     <div>
       <div className="container">
           <div className="column">
-              <Link to={"http://localhost:5173/"}>Inicio</Link>
+              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
           </div>
           <div className="column">
-              <Link to={"/Mapa"}>Mapa</Link>
+              <Link className="Link" to={"/Mapa"}>Mapa</Link>
           </div>
           <div className="column">
-              <Link to={"/Solicitudes"}>Solicitudes</Link>
+              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
           </div>
           <div className="column">
-              <Link to={"/Perfil"}>Perfil</Link> 
+              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
           </div>
           <div className="column">
-              <Link to={"/Login"}>Login</Link> 
+              <Link className="Link" to={"/Login"}>Login</Link> 
           </div>
           <div className="column">
-              <Link to={"/Certificados"}>Certificados</Link>
+              <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
       <form onSubmit={submitHandle}>
-        <h2>Donación Sangre Paraguay</h2>
+        <h2 className="titulo">Donación Sangre Paraguay</h2>
         <h2>Iniciar Sesión</h2>
         <h2><img src="images/cora.jpg"/></h2>
-        <div className="campos">Email</div>
+        <div className="camposss">Email</div>
         <h2><input type="Email" name="email" placeholder="Email"/></h2>
         <h2></h2>
-        <div className="campos">Contraseña</div>
-        <h2><button type='button' onClick={mostrarContraseña}>Mostrar 👀</button></h2>
+        <div className="camposss">Contraseña</div>
+        <h2><button className="buttonn" type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2>
         <h2><input name="password" type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
-        <div className="cuadrado">
-            <button className="textouno" type="submit">Iniciar Sesión</button><br />
-            <div className="texto"><Link to={"/Registros"}>Registrarse</Link></div><br/>
-            <div className="texto"><Link to={"/ReestablecerContraseña"}>¿Olvidaste tu Contraseña?</Link></div>
+        <div className="cuadradoo">
+            <button className="textounoo" type="submit">Iniciar Sesión</button><br />
+            <div className="texto"><Link className="Linkk" to={"/Registros"}>Registrarse</Link></div><br/>
+            <div className="texto"><Link className="Linkk" to={"/ReestablecerContraseña"}>¿Olvidaste tu Contraseña?</Link></div>
         </div>
       </form>
       </div>

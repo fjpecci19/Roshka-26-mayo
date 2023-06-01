@@ -13,25 +13,25 @@ function Perfil() {
     <div>
       <div className="container">
           <div className="column">
-              <Link to={"http://localhost:5173/"}>Inicio</Link>
+              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
           </div>
           <div className="column">
-              <Link to={"/Mapa"}>Mapa</Link>
+              <Link className="Link" to={"/Mapa"}>Mapa</Link>
           </div>
           <div className="column">
-              <Link to={"/Solicitudes"}>Solicitudes</Link>
+              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
           </div>
           <div className="column">
-              <Link to={"/Perfil"}>Perfil</Link>
+              <Link className="Link" to={"/Perfil"}>Perfil</Link>
           </div>
           <div className="column">
-              <Link to={"/Login"}>Login</Link>
+              <Link className="Link" to={"/Login"}>Login</Link>
           </div>
           <div className="column">
-              <Link to={"/Certificados"}>Certificados</Link>
+              <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Perfil<div className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></div></h2>
+      <h2 className="titulo">Perfil<div className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></div></h2>
       <h2><div className="section">
       <h2></h2>
       <div className="nom"><span>Nombre:</span><span>Alan Toro</span></div>
@@ -48,7 +48,7 @@ function Perfil() {
       </div></h2>
       <h2><div className="cuadro"><div className="inside">Editar información</div></div></h2>
       <h2><div className="cuadro"><div className="inside">Cambiar Contraseña</div></div></h2>
-      <h2><div className="cuadro"><div className="inside">Cerrar Sesión</div></div></h2>
+      <h2><div className="cuadro"><div className="inside"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></div></div></h2>
     </div>
   )
 }

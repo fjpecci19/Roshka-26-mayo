@@ -7,25 +7,25 @@ function Certificados() {
     <div>
       <div className="container">
           <div className="column">
-              <Link to={"http://localhost:5173/"}>Inicio</Link>
+              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
           </div>
           <div className="column">
-              <Link to={"/Mapa"}>Mapa</Link>
+              <Link className="Link" to={"/Mapa"}>Mapa</Link>
           </div>
           <div className="column">
-              <Link to={"/Solicitudes"}>Solicitudes</Link>
+              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
           </div>
           <div className="column">
-              <Link to={"/Perfil"}>Perfil</Link> 
+              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
           </div>
           <div className="column">
-              <Link to={"/Login"}>Login</Link> 
+              <Link className="Link" to={"/Login"}>Login</Link> 
           </div>
           <div className="column">
-              <Link to={"/Certificados"}>Certificados</Link>
+              <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2>Certificados</h2>
+      <h2 className="titulo">Certificados</h2>
       <div className="certif">
         <h2></h2>
         <div className="title">Certificado de donación
