@@ -60,8 +60,7 @@ function Registros() {
           </div>
       </div>
       <form onSubmit={registroHandle}>
-        <div className="titulo">Registro</div>
-        <h2></h2>
+        <h2 className="titulo">Registro</h2><br />
         <div className="camposs">Nombres</div>
         <h2><input name="nombres" type="text"/></h2><br />
         <div className="camposs">Apellidos</div>
