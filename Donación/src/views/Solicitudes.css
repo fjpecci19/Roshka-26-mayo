@@ -34,3 +34,16 @@ input{
     height: 40px;
     background-color: red;
 }
+
+.buuttoon:hover{
+    color: white;
+    cursor: pointer;
+}
+
+select{
+    border: 2px solid black;
+}
+
+option{
+    border: 2px solid black;
+}

@@ -54,9 +54,9 @@ function Login() {
         <h2><button className="buttonn" type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2>
         <h2><input name="password" type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
         <div className="cuadradoo">
-            <button className="textounoo" type="submit">Iniciar Sesión</button><br />
-            <div className="texto"><Link className="Linkk" to={"/Registros"}>Registrarse</Link></div><br/>
-            <div className="texto"><Link className="Linkk" to={"/ReestablecerContraseña"}>¿Olvidaste tu Contraseña?</Link></div>
+            <button className="buuttoon" type="submit">Iniciar Sesión</button><br />
+            <button className="buuttoon"><Link className="Linkk" to={"/Registros"}>Registrarse</Link></button><br/>
+            <button className="buuttoon"><Link className="Linkk" to={"/ReestablecerContraseña"}>¿Olvidaste tu Contraseña?</Link></button>
         </div>
       </form>
       </div>

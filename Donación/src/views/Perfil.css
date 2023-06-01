@@ -54,9 +54,13 @@ img:hover{
     color: black;
 }
 
+.amigo{
+    color: black;
+    font-size: 15px;
+    
+}
 .amigo:hover{
     cursor: pointer;
-    color: red;
 }
 
 .Linkk{
@@ -66,5 +70,5 @@ img:hover{
 
 .Linkk:hover{
     cursor: pointer;
-    color: red;
+    color: white;
 }

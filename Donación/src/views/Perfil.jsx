@@ -31,7 +31,7 @@ function Perfil() {
               <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
-      <h2 className="titulo">Perfil<div className="amigo" ><img onClick={solicitud} src={enviar ? "images/perfil.jpg" : "images/sent.jpg"}/></div></h2>
+      <h2 className="titulo">Perfil<div><img onClick={solicitud} src={enviar ? "images/Correct.jpg":"images/Incorrect.jpg"}/></div></h2>
       <h2><div className="section">
       <h2></h2>
       <div className="nom"><span>Nombre:</span><span>Alan Toro</span></div>
@@ -46,9 +46,9 @@ function Perfil() {
       <h2></h2>
       <div className="nom"><span>CI:</span><span>4556730</span></div>
       </div></h2>
-      <h2><div className="cuadro"><div className="inside">Editar información</div></div></h2>
-      <h2><div className="cuadro"><div className="inside">Cambiar Contraseña</div></div></h2>
-      <h2><div className="cuadro"><div className="inside"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></div></div></h2>
+      <h2><button className="buuttoon">Editar información</button></h2>
+      <h2><button className="buuttoon">Cambiar Contraseña</button></h2>
+      <h2><button className="buuttoon"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></button></h2>
     </div>
   )
 }

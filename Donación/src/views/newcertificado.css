@@ -47,7 +47,7 @@ h2{
     background-color: red;
 }
 
-button:hover{
+.buttoon:hover{
     cursor: pointer;
     color: white;
 }

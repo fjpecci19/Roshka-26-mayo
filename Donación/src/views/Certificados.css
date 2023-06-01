@@ -18,7 +18,7 @@ h2{
     background-color: white;
     border: 3px solid red;
     width: 500px;
-    height: 500px;
+    height: 400px;
     border-radius: 4px;
 }
 
@@ -30,3 +30,12 @@ h2{
     font-size: 20px;
 }
 
+.linkw{
+    text-decoration: none;
+    color: black;
+}
+
+.linkw:hover{
+    color: white;
+    cursor: pointer;
+}

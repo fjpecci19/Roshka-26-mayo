@@ -60,7 +60,7 @@ function Solicitudes() {
       <h2><input type="text" placeholder="Teléfono"/></h2>
       <div className="camposs">Descripción</div>
       <h2><input className="des" type="text" placeholder="Descripción"/></h2>
-      <br /><h2><button className="buuttoon">Enviar</button></h2>
+      <br /><h2><button type="submit" className="buuttoon">Enviar</button></h2>
     </div>
   )
 }

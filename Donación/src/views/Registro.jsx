@@ -82,7 +82,7 @@ function Registros() {
         <h2><button type="button" onClick={showContraseña}>Mostrar 👀</button></h2>
         <h2><input name= "confirm" type={show ? "text" : "password"} placeholder="Confirmar Contraseña"/></h2>
         <div className="cuadrado">
-            <button className="textooo">Registrarse</button>
+            <button className="buttoon">Registrarse</button>
         </div>
       </form>
     </div>

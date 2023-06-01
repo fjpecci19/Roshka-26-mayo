@@ -27,7 +27,7 @@ function Contraseña() {
       </div>
       <h2>Enviaremos un correo para reestablecer tu contraseña</h2>
       <h2><input type="email" placeholder="Ingresa tu e-mail"/></h2>
-      <h2><button className="buttonn" type="submit">Enviar</button></h2>
+      <h2><button className="buuttoon" type="submit">Enviar</button></h2>
     </div>
   )
 }
