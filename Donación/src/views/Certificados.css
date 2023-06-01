@@ -29,13 +29,3 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
-
-.linkw{
-    text-decoration: none;
-    color: black;
-}
-
-.linkw:hover{
-    color: white;
-    cursor: pointer;
-}

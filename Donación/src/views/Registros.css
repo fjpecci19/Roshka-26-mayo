@@ -4,31 +4,6 @@ h2{
     font-size: 20px;
 }
 
-.campoos{
-    text-align: center;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    height: 25px;
-    border: 1px solid white;
-}
-
-input{
-    width: 500px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 4px;
-}
-
-select{
-    width: 500px;
-    height: 50px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 4px;
-}
-
 .cuadrado{
     background-color: white;
     text-align: center;

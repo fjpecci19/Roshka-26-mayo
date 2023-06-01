@@ -47,12 +47,11 @@ function Login() {
         <h2 className="titulo">Donación Sangre Paraguay</h2>
         <h2>Iniciar Sesión</h2>
         <h2><img src="images/cora.jpg"/></h2>
-        <div className="camposss">Email</div>
-        <h2><input type="Email" name="email" placeholder="Email"/></h2>
-        <h2></h2>
-        <div className="camposss">Contraseña</div>
+        <div className="camposs">Email</div>
+        <h2><input type="Email" name="email"/></h2><br />
+        <div className="camposs">Contraseña</div>
+        <h2><input name="password" type={mostrar ? "text" : "password"}/></h2>
         <h2><button className="buttonn" type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2>
-        <h2><input name="password" type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
         <div className="cuadradoo">
             <button className="buuttoon" type="submit">Iniciar Sesión</button><br />
             <button className="buuttoon"><Link className="Linkk" to={"/Registros"}>Registrarse</Link></button><br/>

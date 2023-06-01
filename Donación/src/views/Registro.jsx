@@ -59,28 +59,28 @@ function Registros() {
       <form onSubmit={registroHandle}>
         <div className="titulo">Registro</div>
         <h2></h2>
-        <div className="campoos">Nombres</div>
-        <h2><input name="nombres" type="text" placeholder="Nombres"/></h2>
-        <div className="campoos">Apellidos</div>
-        <h2><input name="apellidos" type="text" placeholder="Apellidos"/></h2>
-        <div className="campoos">Cédula de Identidad</div>
-        <h2><input name= "ci" type="text" placeholder="Cédula de Identidad"/></h2>
-        <div className="campoos">Sexo</div>
+        <div className="camposs">Nombres</div>
+        <h2><input name="nombres" type="text"/></h2><br />
+        <div className="camposs">Apellidos</div>
+        <h2><input name="apellidos" type="text"/></h2><br />
+        <div className="camposs">Cédula de Identidad</div>
+        <h2><input name= "ci" type="text"/></h2><br />
+        <div className="camposs">Sexo</div>
         <h2><select name="sex">
             <option>Masculino</option>
             <option>Femenino</option>
             </select>
-        </h2>
-        <div className="campoos">Fecha de nacimiento</div>
-        <h2><input name="fechanac" type="date"/></h2>
-        <div className="campoos">Email</div>
-        <h2><input name="email" type="email" placeholder="Email"/></h2>
-        <div className="campoos" id="cont">Contraseña</div>
-        <h2><button type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2>
-        <h2><input name="contra" type={mostrar ? "text" : "password"} placeholder="Contraseña"/></h2>
-        <div className="campoos" id="conf">Confirmar Contraseña</div>
-        <h2><button type="button" onClick={showContraseña}>Mostrar 👀</button></h2>
-        <h2><input name= "confirm" type={show ? "text" : "password"} placeholder="Confirmar Contraseña"/></h2>
+        </h2><br />
+        <div className="camposs">Fecha de nacimiento</div>
+        <h2><input name="fechanac" type="date"/></h2><br />
+        <div className="camposs">Email</div>
+        <h2><input name="email" type="email"/></h2><br />
+        <div className="camposs" id="cont">Contraseña</div>
+        <h2><input name="contra" type={mostrar ? "text" : "password"}/></h2>
+        <h2><button type="button" onClick={mostrarContraseña}>Mostrar 👀</button></h2><br />
+        <div className="camposs" id="conf">Confirmar Contraseña</div>
+        <h2><input name= "confirm" type={show ? "text" : "password"}/></h2>
+        <h2><button type="button" onClick={showContraseña}>Mostrar 👀</button></h2><br />
         <div className="cuadrado">
             <button className="buttoon">Registrarse</button>
         </div>

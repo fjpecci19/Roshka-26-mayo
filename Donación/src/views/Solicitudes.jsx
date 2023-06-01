@@ -25,12 +25,12 @@ function Solicitudes() {
           <Link className="Link" to={"/Certificados"}>Certificados</Link>
         </div>
       </div>
-      <h2 className="titulo">Solicitudes</h2>
+      <h2 className="titulo">Solicitudes</h2><br />
       <div className="camposs">Nombre y apellido</div>
-      <h2><input className="input" type="text" placeholder="Nombre y apellido"/></h2>
+      <h2><input className="input" type="text"/></h2><br />
       <div className="camposs">Cédula</div>
-      <h2><input className="input" type="text" placeholder="Cédula"/></h2>
-      <div className="camposs">Nombre</div>
+      <h2><input className="input" type="text"/></h2><br />
+      <div className="camposs">Tipo de sangre</div>
       <h2>
         <select>
           <option>A+</option>
@@ -42,7 +42,7 @@ function Solicitudes() {
           <option>AB+</option>
           <option>AB-</option>
         </select>
-      </h2>
+      </h2><br />
       <div className="camposs">Establecimiento</div>
       <h2>
         <select>
@@ -51,15 +51,15 @@ function Solicitudes() {
           <option>SODEP</option>
           <option>Roshka</option>
         </select>
-      </h2>
+      </h2><br />
       <div className="camposs">Volumen</div>
-      <h2><input type="text" placeholder="Volumen"/></h2>
+      <h2><input type="text"/></h2><br />
       <div className="camposs">Fecha límite</div>
-      <h2><input type="date"/></h2>
+      <h2><input type="date"/></h2><br />
       <div className="camposs">Teléfono</div>
-      <h2><input type="text" placeholder="Teléfono"/></h2>
+      <h2><input type="text"/></h2><br />
       <div className="camposs">Descripción</div>
-      <h2><input className="des" type="text" placeholder="Descripción"/></h2>
+      <h2><input className="des" type="text"/></h2><br />
       <br /><h2><button type="submit" className="buuttoon">Enviar</button></h2>
     </div>
   )

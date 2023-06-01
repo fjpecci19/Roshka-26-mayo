@@ -36,7 +36,7 @@ function Certificados() {
         <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
         <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>
         </div>
-        <h2><button className="buttoon"><Link className="linkw" to={"/NewCertificado"}>Generar nuevo certificado</Link></button></h2>
+        <h2><button className="buttoon"><Link className="Linkk" to={"/NewCertificado"}>Generar nuevo certificado</Link></button></h2>
       </div>
     </div>
   )
