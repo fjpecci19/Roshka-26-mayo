@@ -34,6 +34,7 @@ function Registros() {
          .then(result => {
             alert("Cuenta creada!")
             console.log(result.data)
+            window.location.reload()
          })
     }
 
