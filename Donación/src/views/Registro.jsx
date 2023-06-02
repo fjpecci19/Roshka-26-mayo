@@ -32,8 +32,8 @@ function Registros() {
         axios.post("http://192.168.16.90:8000/api/registro/", {"name": nombres, "surname": apellidos, "nro_cedula": ci, "sexo": sex,
          "fecha_nacimiento": fechanac, "email": email, "password": contra})
          .then(result => {
-            alert("Cuenta creada!")
             console.log(result.data)
+            alert("Cuenta creada!")
             window.location.reload()
          })
     }
@@ -68,12 +68,8 @@ function Registros() {
         <h2><input name="apellidos" type="text"/></h2><br />
         <div className="camposs">Cédula de Identidad</div>
         <h2><input name= "ci" type="text"/></h2><br />
-        <div className="camposs">Sexo</div>
-        <h2><select name="sex">
-            <option>Masculino</option>
-            <option>Femenino</option>
-            </select>
-        </h2><br />
+        <div className="camposs">Sexo (M o F)</div>
+        <h2><input name= "sex" type="text"/></h2><br />
         <div className="camposs">Fecha de nacimiento</div>
         <h2><input name="fechanac" type="date"/></h2><br />
         <div className="camposs">Email</div>
