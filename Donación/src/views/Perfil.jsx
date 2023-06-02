@@ -31,6 +31,7 @@ function Perfil() {
               <Link className="Link" to={"/Certificados"}>Certificados</Link>
           </div>
       </div>
+      <form>
       <h2 className="titulo">Perfil<div><img onClick={solicitud} src={enviar ? "images/Correct.jpg":"images/Incorrect.jpg"}/></div></h2>
       <h2><div className="section">
       <h2></h2>
@@ -49,6 +50,7 @@ function Perfil() {
       <h2><button className="buuttoon">Editar información</button></h2>
       <h2><button className="buuttoon">Cambiar Contraseña</button></h2>
       <h2><button className="buuttoon"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></button></h2>
+      </form>
     </div>
   )
 }
