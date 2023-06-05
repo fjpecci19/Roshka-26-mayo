@@ -9,6 +9,10 @@ function Solicitudes() {
     navigate("/MisSolicitudes")
   }
   
+  const solicitudHandle = (event) => {
+    event.preventDefault()
+    
+  }
   return (
     <div>
       <div className="container">
