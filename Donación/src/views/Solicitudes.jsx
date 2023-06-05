@@ -12,22 +12,24 @@ function Solicitudes() {
   
   const solicitudHandle = (event) => {
     event.preventDefault()
-    const nombre = event.target.elements.name.value
-    const cedula = event.target.elements.ci.value
-    const sangre = event.target.elements.tipo.value
-    const local = event.target.elements.local.value
-    const volumen = event.target.elements.vol.value
-    const fecha = event.target.elements.fecha.value
-    const telefono = event.target.elements.tel.value
-    const descripcion = event.target.elements.des.value
+    const data = {
+      solicitud: event.target.elements.des.value,
+      fecha_limite: event.target.elements.fecha.value,
+      volumenes_necesarios: event.target.elements.vol.value,
+      nombre_apellido_donatario: event.target.elements.name.value,
+      cedula_donatario: event.target.elements.ci.value,
+      telefono_contacto: event.target.elements.tel.value,
+      tipo_sangre: event.target.elements.tipo.value,
+      establecimiento: event.target.elements.local.value
+    }
 
-    axios.post("http://192.168.16.90:8000/api/solicitudes/", {"nombre_apellido_donatario": nombre, "cedula_donatario": cedula,
-     "tipo_sangre": sangre, "establecimiento": local, "volumenes_necesarios": volumen, "fecha_limite": fecha,
-     "telefono_contacto": telefono, "solicitud": descripcion},
-     {headers: {'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`}})
+    axios.post("http://192.168.16.90:8000/api/solicitudes/", data,
+     {headers: {Authorization: `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`}})
      .then(result => {
       console.log(result.data)
       alert("Solicitud enviada")
+     }).catch(error => {
+      console.log(error)
      })
   }
   return (
