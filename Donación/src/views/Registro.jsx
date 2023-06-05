@@ -83,6 +83,9 @@ function Registros() {
         <div className="cuadrado">
             <button className="buttoon">Registrarse</button>
         </div>
+        <div className="cuadrado">
+            <button className='buttoon'><Link className="Linkk" to={"/Login"}>Volver</Link></button>
+        </div>
       </form>
     </div>
   )
