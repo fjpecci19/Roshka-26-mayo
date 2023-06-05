@@ -58,7 +58,7 @@ function Certificados() {
             <br /><div className="datos"><span>Cédula de identidad:</span><span>{certificado.user.nro_cedula}</span></div>
             <br /><div className="datos"><span>Última donación:</span><span>{certificado.user.ult_vez_donado}</span></div>
           </div>
-        ))}<br /><br />
+        ))}
       </div>
     </div>
   )
