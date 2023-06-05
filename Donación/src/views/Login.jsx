@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Login.css"
 import axios from 'axios'
 
 function Login() {
     const [mostrar, editar] = useState(false)
+    const navigate = useNavigate()
 
     const mostrarContraseña = () => {
         editar(!mostrar)
@@ -17,7 +18,8 @@ function Login() {
         axios.post("http://192.168.16.90:8000/api/login/", {"email": email, "password": password})
         .then(result => {
             alert("Sesión iniciada")
-            window.location.href = "/Perfil"
+            navigate("/Perfil")
+            
         }).catch(error => {
             if (!email || ! password){
                 alert("Por favor, completa tus datos")

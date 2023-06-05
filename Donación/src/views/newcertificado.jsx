@@ -1,8 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import "./newcertificado.css"
+import axios from 'axios'
 
 function NewCertificado() {
+    const [certi, setCerti] = useState({fecha_donacion: "", local_donacion: ""})
+
+    function llamarALaApi(){
+        axios.get("http://192.168.16.90:8000/api/certificados/", {
+            headers: {
+              'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`
+            }
+        })
+        .then(result => {
+            setCerti(result.data.data)
+            console.log(result.data)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
+    useEffect(() => {
+        llamarALaApi()
+    }, [])
+
   return (
   <div>
     <div className="container">
@@ -25,15 +46,17 @@ function NewCertificado() {
             <Link className="Link" to={"/Certificados"}>Certificados</Link>
         </div>
     </div>
-    <h2 className="titulo">Generar certificado</h2>
-    <div className="newcertif">
-        <div className="taitol">Nuevo certificado 
-        <br /><br /><div className="relleno"><span>Fecha de donación</span><span><input className="inpuut" type="date"/></span></div>
-        <br /><br /><div className="relleno"><span>Local de donación</span><span><input className="inpuut" type="text" /></span></div>
-    </div>
-        <div><button className="buttoon">Generar certificado</button></div>
-        <div><Link to={"/Certificados"}><button className="buttoon">Cancelar</button></Link></div>
-    </div>
+    <form>
+        <h2 className="titulo">Generar certificado</h2>
+        <div className="newcertif">
+            <div className="taitol">Nuevo certificado 
+            <br /><br /><div className="relleno"><span>Fecha de donación</span><span>{certi.fecha_donacion}</span></div>
+            <br /><br /><div className="relleno"><span>Local de donación</span><span>{certi.local_donacion}</span></div>
+        </div>
+            <div><button type="submit" className="buttoon">Generar certificado</button></div>
+            <div><Link to={"/Certificados"}><button className="buttoon">Cancelar</button></Link></div>
+        </div>
+    </form>
   </div>
   )
 }

@@ -1,12 +1,27 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import { Link } from 'react-router-dom';
-import datos from '../data/datos'
+import axios from 'axios';
 import "./Mapa.css"
 
 function Mapa() {
     const position = [-23.442503, -58.443832]
+        const [datos, setDatos] = useState([]);
+
+        function llamarALaApi(){
+            axios.get("http://192.168.16.90:8000/api/locales/")
+            .then(result => {
+                setDatos(result.data.data)
+            }).catch(error => {
+            console.log(error)
+            })
+        }
+
+        useEffect(() => {
+            llamarALaApi()
+        }, [])
+
 
     return (
     <div>
@@ -39,7 +54,7 @@ function Mapa() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             {
-            datos.map((local) => {return <Marker position={[local.latitud, local.longitud]}>
+            datos.map((local) => {return <Marker key={local.id} position={[local.latitud, local.longitud]}>
             <Popup>
               <span className="omar">Dirección: {local.direccion}</span><br />
               <span className="omar">Local: {local.local_donacion}</span><br />
