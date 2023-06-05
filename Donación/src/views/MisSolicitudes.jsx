@@ -58,7 +58,7 @@ function MisSolicitudes() {
             <br /><div className="datos"><span>Volumen:</span><span>{solicitud.volumenes_necesarios}</span></div>
             <br /><div className="datos"><span>Fecha límite:</span><span>{solicitud.fecha_limite}</span></div>
             <br /><div className="datos"><span>Teléfono:</span><span>{solicitud.telefono_contacto}</span></div>
-            <br /><div className="datos"><span>Fecha límite:</span><span>{solicitud.solicitud}</span></div>
+            <br /><div className="datos"><span>Descripción:</span><span>{solicitud.solicitud}</span></div>
           </div>
         ))}
       </div>
