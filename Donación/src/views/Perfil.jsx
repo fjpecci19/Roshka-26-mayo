@@ -71,7 +71,7 @@ function Perfil() {
         <div className="nom"><span>CI:</span><span id="ci">{user.nro_cedula}</span></div>
         <h2></h2>
         </div></h2>
-        <h2><button type="submit" className="buuttoon">Editar información</button></h2>
+        <h2><button type="button" className="buuttoon">Editar información</button></h2>
         <h2><button type="button" className="buuttoon">Cambiar Contraseña</button></h2>
         <h2><button className="buuttoon"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></button></h2>
       </form>
