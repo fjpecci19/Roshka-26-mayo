@@ -10,13 +10,13 @@ function Certificados() {
     axios.get("http://192.168.16.90:8000/api/certificados/", {
       headers: {
         'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`
-      }
-      }).then(result => {
-          setCerti(result.data.data)
-          console.log(result.data.data)
-        }).catch(error => {
-          console.log(error)
-        })
+      }})
+      .then(result => {
+        setCerti(result.data.data)
+        console.log(result.data.data)
+      }).catch(error => {
+        console.log(error)
+      })
   }
 
   useEffect(() => {
