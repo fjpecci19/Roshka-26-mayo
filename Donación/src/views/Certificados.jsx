@@ -50,8 +50,8 @@ function Certificados() {
         <h2></h2>
         <div className="title">Certificado de donación
         <br /><br /><div className="datos"><span>Establecimiento:</span><span>{certi.local_donacion}</span></div>
-        <br /><div className="datos"><span>Apellido:</span><span>Toro</span></div>
-        <br /><div className="datos"><span>Nombre:</span><span>Alan</span></div>
+        <br /><div className="datos"><span>Apellido:</span><span>{certi.surname}</span></div>
+        <br /><div className="datos"><span>Nombre:</span><span>{certi.name}</span></div>
         <br /><div className="datos"><span>Sexo:</span><span>Masculino</span></div>
         <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
         <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>

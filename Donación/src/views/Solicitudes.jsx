@@ -1,8 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Solicitudes.css"
 
 function Solicitudes() {
+  const navigate = useNavigate()
+
+  function handleClick(){
+    navigate("/MisSolicitudes")
+  }
+  
   return (
     <div>
       <div className="container">
@@ -25,7 +31,8 @@ function Solicitudes() {
           <Link className="Link" to={"/Certificados"}>Certificados</Link>
         </div>
       </div>
-      <h2 className="titulo">Solicitudes</h2><br />
+      <h2 className="titulo">Solicitudes</h2>
+      <h2 className="titulo"><Link className="linkeo" onClick={handleClick}>Mis solicitudes</Link></h2><br />
       <div className="camposs">Nombre y apellido</div>
       <h2><input className="input" type="text"/></h2><br />
       <div className="camposs">Cédula</div>

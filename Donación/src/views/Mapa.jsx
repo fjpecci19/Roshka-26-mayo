@@ -14,7 +14,7 @@ function Mapa() {
             .then(result => {
                 setDatos(result.data.data)
             }).catch(error => {
-            console.log(error)
+                console.log(error)
             })
         }
 

@@ -9,6 +9,7 @@ import Registros from "./views/Registro.jsx"
 import Contraseña from './views/Contraseña.jsx'
 import Certificados from './views/Certificados.jsx'
 import NewCertificado from './views/newcertificado.jsx'
+import MisSolicitudes from './views/MisSolicitudes.jsx'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "NewCertificado",
     element: <NewCertificado/>
+  },
+  {
+    path: "MisSolicitudes",
+    element: <MisSolicitudes/>
   }
 ])
 

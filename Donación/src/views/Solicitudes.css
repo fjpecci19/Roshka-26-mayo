@@ -40,3 +40,8 @@ select{
 option{
     border: 2px solid black;
 }
+
+.linkeo{
+    font-size: 15px;
+    color: red;
+}
