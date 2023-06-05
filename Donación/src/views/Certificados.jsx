@@ -12,8 +12,8 @@ function Certificados() {
         'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`
       }
       }).then(result => {
-          setCerti(result.data)
-          console.log(result.data)
+          setCerti(result.data.data)
+          console.log(result.data.data)
         }).catch(error => {
           console.log(error)
         })
@@ -48,14 +48,16 @@ function Certificados() {
       <h2 className="titulo">Certificados</h2>
       <div className="certif">
         <h2></h2>
-        <div className="title">Certificado de donación
-        <br /><br /><div className="datos"><span>Establecimiento:</span><span>{certi.local_donacion}</span></div>
-        <br /><div className="datos"><span>Apellido:</span><span>{certi.surname}</span></div>
-        <br /><div className="datos"><span>Nombre:</span><span>{certi.name}</span></div>
-        <br /><div className="datos"><span>Sexo:</span><span>Masculino</span></div>
-        <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
-        <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>
-        </div>
+        {certi.map((certificado, index) => (
+          <div key={index} className="title">Certificado de donación
+            <br /><br /><div className="datos"><span>Establecimiento:</span><span>{certificado.local_donacion}</span></div>
+            <br /><div className="datos"><span>Apellido:</span><span>{certificado.surname}</span></div>
+            <br /><div className="datos"><span>Nombre:</span><span>{certificado.name}</span></div>
+            <br /><div className="datos"><span>Sexo:</span><span>Masculino</span></div>
+            <br /><div className="datos"><span>Cédula de identidad:</span><span>4563214</span></div>
+            <br /><div className="datos"><span>Última donación:</span><span>16/4/2021</span></div>
+          </div>
+        ))}<br /><br />
         <h2><button className="buttoon"><Link className="Linkk" to={"/NewCertificado"}>Generar nuevo certificado</Link></button></h2>
       </div>
     </div>
