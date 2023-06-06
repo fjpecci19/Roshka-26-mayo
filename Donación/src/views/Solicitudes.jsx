@@ -11,7 +11,6 @@ function Solicitudes() {
   }
   
   const solicitudHandle = (event) => {
-    console.log(event.target.elements.des.value)
     event.preventDefault()
     const data = {
       solicitud: event.target.elements.des.value,
