@@ -16,3 +16,13 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+.linke{
+    font-size: 20px;
+    color: green;
+    text-decoration: none;
+}
+
+.linke:hover{
+    color: lightgreen;
+}

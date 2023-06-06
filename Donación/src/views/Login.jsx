@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./Login.css"
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 function Login() {
     const [mostrar, editar] = useState(false)
@@ -40,6 +41,8 @@ function Login() {
         })
     }
 
+    const tokenRedux = useSelector(state => state.token)
+    
     return (
     <div>
         <div className="container">

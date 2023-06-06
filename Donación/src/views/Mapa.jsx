@@ -6,6 +6,13 @@ import axios from 'axios';
 import "./Mapa.css"
 
 function Mapa() {
+
+    const [despegable, setDespegable] = useState(true)
+
+    const despeglar = () => {
+        setDespegable(!despegable)
+    }
+
     const navigate = useNavigate()
 
     const handleNavigate = (path) => {
@@ -53,6 +60,7 @@ function Mapa() {
         </div>
         <div>
             <h2 className="titulo">Mapa</h2>
+            <h2><Link className='linke' to={"/Solicitudes"}>Ver locales</Link></h2>
         </div>
         <MapContainer className="coso" center={position} zoom={5} scrollWheelZoom={false}>
             <TileLayer
@@ -71,7 +79,6 @@ function Mapa() {
           })
         }
       </MapContainer>
-      <div></div>
     </div>
   )
 }

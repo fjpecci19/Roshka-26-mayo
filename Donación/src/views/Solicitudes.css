@@ -44,4 +44,9 @@ option{
 .linkeo{
     font-size: 15px;
     color: red;
+    text-decoration: none;
+}
+
+.linkeo:hover{
+    color: darkred;
 }
