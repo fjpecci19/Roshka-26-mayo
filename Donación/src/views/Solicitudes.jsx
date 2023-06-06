@@ -11,6 +11,7 @@ function Solicitudes() {
   }
   
   const solicitudHandle = (event) => {
+    console.log(event.target.elements.des.value)
     event.preventDefault()
     const data = {
       solicitud: event.target.elements.des.value,
@@ -30,8 +31,10 @@ function Solicitudes() {
       alert("Solicitud enviada")
      }).catch(error => {
       console.log(error)
+      alert("Ingrese un número para el tipo de sangre")
      })
   }
+
   return (
     <div>
       <div className="container">
@@ -62,6 +65,7 @@ function Solicitudes() {
         <div className="camposs">Cédula</div>
         <h2><input className="input" name="ci" type="text"/></h2><br />
         <div className="camposs">Tipo de sangre</div>
+        <div className="camposs">(1: A+, 2: A-, 3: B+, 4: B-, 5: AB+, 6: AB-, 7: O+, 8: O-)</div>
         <h2><input className="input" name="tipo" type="text"/></h2><br />
         <div className="camposs">Establecimiento</div>
         <h2><input className="input" name="local" type="text"/></h2><br />
