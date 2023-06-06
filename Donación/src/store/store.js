@@ -1,4 +1,4 @@
-import {createStore} from 'react-redux'
+import {createStore} from 'redux'
 const initialState = {token: null}
 
 const rootReducer = (state = initialState, action) => {

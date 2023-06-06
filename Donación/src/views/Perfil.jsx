@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import "./Perfil.css"
 import axios from 'axios'
 
 function Perfil() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleNavigate = (path) => {
         navigate(path)
+    }
+    const cerrarSesion = () => {
+      dispatch({type: "nullToken"})
+      navigate("/Login")
     }
 
     const [enviar, enviada] = useState(true)
@@ -17,11 +23,11 @@ function Perfil() {
     }
 
     const [user, setUser] = useState({name: "", surname: "", fecha_nacimiento: "", email: "", ult_vez_donado: "", sexo: "", nro_cedula: ""});
-
+    const token = useSelector(state => state.token)
     function llamarALaApi(){
         axios.get("http://192.168.16.90:8000/api/user/", {
             headers: {
-              'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`
+              'Authorization': `Bearer ${token}`
             }
         })
         .then(result => {
@@ -68,9 +74,7 @@ function Perfil() {
         <h2></h2>
         <div className="nom"><span>Fecha de nacimiento:</span><span id="fecha">{user.fecha_nacimiento}</span></div>
         <h2></h2>
-        <div className="nom"><span>Email:</span><span id="email">a{user.email}</span></div>
-        <h2></h2>
-        <div className="nom"><span>Última donación:</span><span id="donacion">{user.ult_vez_donado}</span></div>
+        <div className="nom"><span>Email:</span><span id="email">{user.email}</span></div>
         <h2></h2>
         <div className="nom"><span>Sexo:</span><span id="sexo">{user.sexo}</span></div>
         <h2></h2>
@@ -79,7 +83,7 @@ function Perfil() {
         </div></h2>
         <h2><button type="button" className="buuttoon">Editar información</button></h2>
         <h2><button type="button" className="buuttoon">Cambiar Contraseña</button></h2>
-        <h2><button className="buuttoon"><Link className="Linkk" to={"/Login"}>Cerrar Sesión</Link></button></h2>
+        <h2><button onClick={cerrarSesion} className="buuttoon">Cerrar Sesión</button></h2>
       </form>
     </div>
   )

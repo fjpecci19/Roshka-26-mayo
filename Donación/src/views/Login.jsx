@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./Login.css"
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
 
 function Login() {
     const [mostrar, editar] = useState(false)
@@ -16,13 +17,16 @@ function Login() {
         editar(!mostrar)
     }
 
+    const dispatch = useDispatch()
+
     const submitHandle = (event) => {
         event.preventDefault()
         const email = event.target.elements.email.value
         const password = event.target.elements.password.value
         axios.post("http://192.168.16.90:8000/api/login/", {"email": email, "password": password})
         .then(result => {
-            alert("Sesión iniciada")
+            dispatch({type: "setToken", payload: result.data.token})
+            //alert("Sesión iniciada")
             navigate("/Perfil")
             
         }).catch(error => {
@@ -39,6 +43,7 @@ function Login() {
             }
         })
     }
+
     
     return (
     <div>
