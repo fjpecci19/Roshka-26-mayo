@@ -1,10 +1,16 @@
 import React from 'react'
 import "./Registros.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 
 function Registros() {
+    const navigate = useNavigate()
+
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
+
     const [mostrar, editar] = useState(false)
     const mostrarContraseña = () => {
         editar(!mostrar)
@@ -41,24 +47,24 @@ function Registros() {
     return (
     <div>
       <div className="container">
-          <div className="column">
-              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Mapa"}>Mapa</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Login"}>Login</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Certificados"}>Certificados</Link>
-          </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+        </div>
       </div>
       <form onSubmit={registroHandle}>
         <h2 className="titulo">Registro</h2><br />

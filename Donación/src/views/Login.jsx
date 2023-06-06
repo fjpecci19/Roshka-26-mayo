@@ -5,7 +5,12 @@ import axios from 'axios'
 
 function Login() {
     const [mostrar, editar] = useState(false)
+
     const navigate = useNavigate()
+
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
 
     const mostrarContraseña = () => {
         editar(!mostrar)
@@ -37,26 +42,26 @@ function Login() {
 
     return (
     <div>
-      <div className="container">
-          <div className="column">
-              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Mapa"}>Mapa</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Login"}>Login</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Certificados"}>Certificados</Link>
-          </div>
-      </div>
+        <div className="container">
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
+            </div>
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
+            </div>
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
+            </div>
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+            </div>
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
+            </div>
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+            </div>
+        </div>
       <form onSubmit={submitHandle}>
         <h2 className="titulo">Donación Sangre Paraguay</h2>
         <h2>Iniciar Sesión</h2>

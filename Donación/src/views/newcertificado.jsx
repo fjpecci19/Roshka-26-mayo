@@ -8,13 +8,17 @@ function NewCertificado() {
 
     const navigate = useNavigate()
 
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
+
     const certiHandle = (event) => {
         event.preventDefault()
         const datos = {
             fecha_donacion: event.target.elements.fecha.value,
             local_donacion_id: event.target.elements.local.value
         }
-        
+
         if (!datos.fecha_donacion || !datos.local_donacion_id){
             alert("Complete los campos adecuadamente")
             return
@@ -36,22 +40,22 @@ function NewCertificado() {
     <div>
         <div className="container">
             <div className="column">
-                <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Mapa"}>Mapa</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
+            <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Perfil"}>Perfil</Link> 
+            <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Login"}>Login</Link> 
+            <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Certificados"}>Certificados</Link>
+            <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
             </div>
         </div>
         <form onSubmit={certiHandle}>

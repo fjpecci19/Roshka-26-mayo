@@ -6,8 +6,8 @@ import axios from 'axios'
 function Solicitudes() {
   const navigate = useNavigate()
 
-  function handleClick(){
-    navigate("/MisSolicitudes")
+  const handleNavigate = (path) => {
+    navigate(path)
   }
   
   const solicitudHandle = (event) => {
@@ -38,27 +38,27 @@ function Solicitudes() {
     <div>
       <div className="container">
         <div className="column">
-          <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
         </div>
         <div className="column">
-          <Link className="Link" to={"/Mapa"}>Mapa</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
         </div>
         <div className="column">
-          <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
         </div>
         <div className="column">
-          <Link className="Link" to={"/Perfil"}>Perfil</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
         </div>
         <div className="column">
-          <Link className="Link" to={"/Login"}>Login</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
         </div>
         <div className="column">
-          <Link className="Link" to={"/Certificados"}>Certificados</Link>
+          <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
         </div>
       </div>
       <form onSubmit={solicitudHandle}>
         <h2 className="titulo">Solicitudes</h2>
-        <h2 className="titulo"><Link className="linkeo" onClick={handleClick}>Mis solicitudes</Link></h2><br />
+        <h2 className="titulo"><Link className="linkeo" onClick={() => handleNavigate("/MisSolicitudes")}>Mis solicitudes</Link></h2><br />
         <div className="camposs" >Nombre y apellido</div>
         <h2><input className="input" name="name" type="text"/></h2><br />
         <div className="camposs">Cédula</div>

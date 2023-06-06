@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import "./MisSolicitudes.css"
 
 function MisSolicitudes() {
+  const navigate = useNavigate()
+
+  const handleNavigate = (path) => {
+      navigate(path)
+  }
+
     const [soli, setSoli] = useState([])
 
     function llamarALaApi(){
@@ -26,27 +32,27 @@ function MisSolicitudes() {
   return (
     <div>
       <div className="container">
-          <div className="column">
-              <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Mapa"}>Mapa</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Perfil"}>Perfil</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Login"}>Login</Link> 
-          </div>
-          <div className="column">
-              <Link className="Link" to={"/Certificados"}>Certificados</Link>
-          </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
+        </div>
+        <div className="column">
+          <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+        </div>
       </div>
       <h2 className="titulo">Solicitudes</h2>
-      <h2><button className="buttoon"><Link className="Linkk" to={"/Solicitudes"}>Volver</Link></button></h2>
+      <h2><button className="buttoon"><Link className="Linkk" onClick={() => handleNavigate("/Solicitudes")}>Volver</Link></button></h2>
       <div className="certif">
         <h2></h2>
         {soli.map((solicitud, index) => (

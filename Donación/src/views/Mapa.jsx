@@ -1,48 +1,54 @@
 import React, {useEffect, useState} from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./Mapa.css"
 
 function Mapa() {
+    const navigate = useNavigate()
+
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
+
     const position = [-23.442503, -58.443832]
         const [datos, setDatos] = useState([]);
 
-        function llamarALaApi(){
-            axios.get("http://192.168.16.90:8000/api/locales/")
-            .then(result => {
-                setDatos(result.data.data)
-            }).catch(error => {
-                console.log(error)
-            })
-        }
+    function llamarALaApi(){
+        axios.get("http://192.168.16.90:8000/api/locales/")
+        .then(result => {
+            setDatos(result.data.data)
+        }).catch(error => {
+            console.log(error)
+        })
+    }
 
-        useEffect(() => {
-            llamarALaApi()
-        }, [])
+    useEffect(() => {
+        llamarALaApi()
+    }, [])
 
 
     return (
     <div>
         <div className="container">
             <div className="column">
-                <Link className="Link" to={"http://localhost:5173/"}>Inicio</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Mapa"}>Mapa</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Solicitudes"}>Solicitudes</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Perfil"}>Perfil</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Login"}>Login</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
             </div>
             <div className="column">
-                <Link className="Link" to={"/Certificados"}>Certificados</Link>
+                <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
             </div>
         </div>
         <div>
@@ -65,6 +71,7 @@ function Mapa() {
           })
         }
       </MapContainer>
+      <div></div>
     </div>
   )
 }
