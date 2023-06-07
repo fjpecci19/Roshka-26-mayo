@@ -7,6 +7,24 @@ import "./Solicitudes.css"
 function Solicitudes() {
   const navigate = useNavigate()
 
+  const verif = () => {
+    if (!token){
+      alert("Inicia sesión primero")
+      navigate("/Login")
+    }else{
+      navigate("/Perfil")
+    }
+  }
+
+  const verifdos = () => {
+    if (!token){
+      alert("Inicia sesión primero")
+      navigate("/Login")
+    }else{
+      navigate("/Certificados")
+    }
+  }
+
   const token = useSelector((state) => state.token);
 
   const handleNavigate = (path) => {
@@ -42,17 +60,17 @@ function Solicitudes() {
           <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
         </div>
         <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+          <Link className="Link" onClick={verif}>Perfil</Link>
         </div>
         <div className="column">
           <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
         </div>
         <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+          <Link className="Link" onClick={verifdos}>Certificados</Link>
         </div>
       </div>
       <h2 className="titulo">Solicitudes</h2>
-      <h2><button className="buttoon"><Link className="Linkk" onClick={() => handleNavigate("/MisSolicitudes")}>Nueva Solicitud</Link></button></h2>
+      <h2><button className="buttoon"><Link className="Linkk" onClick={verif}>Nueva Solicitud</Link></button></h2>
       <div className="certif">
         <h2></h2>
         {soli.map((solicitud, index) => (

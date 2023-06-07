@@ -11,22 +11,26 @@ function Perfil() {
   const token = useSelector((state) => state.token);
 
   const handleNavigate = (path) => {
+    navigate(path)
+  }
+
+  const verif = () => {
     if (!token){
       alert("Inicia sesión primero")
       navigate("/Login")
     }else{
-      navigate(path);
+      navigate("/Perfil")
     }
-  };
+  }
 
   const cerrarSesion = () => {
-    dispatch({ type: 'nullToken' });
-    navigate('/Login');
-  };
+    dispatch({ type: 'nullToken' })
+    navigate('/Login')
+  }
 
   const solicitud = () => {
-    enviada(!enviar);
-  };
+    enviada(!enviar)
+  }
 
   const [user, setUser] = useState({
     name: '',
@@ -50,9 +54,6 @@ function Perfil() {
         console.log(result.data);
       })
       .catch((error) => {
-        console.log(error);
-        alert('Error: ' + error);
-        navigate('/Login');
       });
   };
 
@@ -74,7 +75,7 @@ function Perfil() {
           </Link>
         </div>
         <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("/Perfil")}>
+          <Link className="Link" onClick={verif}>
             Perfil
           </Link>
         </div>

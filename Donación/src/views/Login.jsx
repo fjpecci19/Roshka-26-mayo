@@ -1,10 +1,30 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import "./Login.css"
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 
 function Login() {
+    const token = useSelector((state) => state.token);
+
+    const verif = () => {
+        if (!token){
+          alert("Inicia sesión primero")
+          navigate("/Login")
+        }else{
+          navigate("/Perfil")
+        }
+    }
+    
+    const verifdos = () => {
+        if (!token){
+          alert("Inicia sesión primero")
+          navigate("/Login")
+        }else{
+          navigate("/Certificados")
+        }
+    }
     const [mostrar, editar] = useState(false)
 
     const navigate = useNavigate()
@@ -55,13 +75,13 @@ function Login() {
                 <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
             </div>
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+                <Link className="Link" onClick={verif}>Perfil</Link>
             </div>
             <div className="column">
                 <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
             </div>
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+                <Link className="Link" onClick={verifdos}>Certificados</Link>
             </div>
         </div>
       <form onSubmit={submitHandle}>

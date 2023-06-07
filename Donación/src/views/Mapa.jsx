@@ -1,11 +1,31 @@
 import React, {useEffect, useState} from 'react'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { useSelector, useDispatch } from 'react-redux';
 import "leaflet/dist/leaflet.css";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./Mapa.css"
 
 function Mapa() {
+    const token = useSelector((state) => state.token);
+
+    const verif = () => {
+        if (!token){
+          alert("Inicia sesión primero")
+          navigate("/Login")
+        }else{
+          navigate("/Perfil")
+        }
+    }
+
+    const verifdos = () => {
+        if (!token){
+          alert("Inicia sesión primero")
+          navigate("/Login")
+        }else{
+          navigate("/Certificados")
+        }
+    }
 
     const navigate = useNavigate()
 
@@ -40,13 +60,13 @@ function Mapa() {
                 <Link className="Link" onClick={() => handleNavigate("/Solicitudes")}>Solicitudes</Link>
             </div>
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Perfil")}>Perfil</Link>
+                <Link className="Link" onClick={verif}>Perfil</Link>
             </div>
             <div className="column">
                 <Link className="Link" onClick={() => handleNavigate("/Login")}>Login</Link>
             </div>
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
+                <Link className="Link" onClick={verifdos}>Certificados</Link>
             </div>
         </div>
         <div>
