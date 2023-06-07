@@ -10,8 +10,7 @@ function Login() {
 
     const verif = () => {
         if (!token){
-          alert("Inicia sesión primero")
-          navigate("/Login")
+          alert("Inicia sesión para acceder a tu perfil")
         }else{
           navigate("/Perfil")
         }
@@ -19,8 +18,7 @@ function Login() {
     
     const verifdos = () => {
         if (!token){
-          alert("Inicia sesión primero")
-          navigate("/Login")
+          alert("Inicia sesión para acceder a tus certificados")
         }else{
           navigate("/Certificados")
         }
@@ -46,7 +44,7 @@ function Login() {
         axios.post("http://192.168.16.90:8000/api/login/", {"email": email, "password": password})
         .then(result => {
             dispatch({type: "setToken", payload: result.data.token})
-            //alert("Sesión iniciada")
+            alert("Sesión iniciada!")
             navigate("/Perfil")
             
         }).catch(error => {

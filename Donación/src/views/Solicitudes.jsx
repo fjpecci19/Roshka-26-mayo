@@ -9,10 +9,10 @@ function Solicitudes() {
 
   const verif = () => {
     if (!token){
-      alert("Inicia sesión primero")
+      alert("Inicia sesión para crear una nueva solicitud")
       navigate("/Login")
     }else{
-      navigate("/Perfil")
+      navigate("/MisSolicitudes")
     }
   }
 

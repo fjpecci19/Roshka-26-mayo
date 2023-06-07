@@ -33,6 +33,7 @@ function NuevaSolicitud() {
      .then(result => {
       console.log(result.data)
       alert("Solicitud enviada")
+      navigate("/Solicitudes")
      }).catch(error => {
       alert("Ingrese un número para el tipo de sangre")
      })

@@ -16,7 +16,7 @@ function Perfil() {
 
   const verif = () => {
     if (!token){
-      alert("Inicia sesión primero")
+      alert("Inicia sesión para acceder a tu perfil")
       navigate("/Login")
     }else{
       navigate("/Perfil")

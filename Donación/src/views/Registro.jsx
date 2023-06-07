@@ -39,8 +39,8 @@ function Registros() {
          "fecha_nacimiento": fechanac, "email": email, "password": contra})
          .then(result => {
             console.log(result.data)
-            alert("Cuenta creada!")
-            window.location.reload()
+            alert("Cuenta creada! Ahora registrate para acceder a tu perfil")
+            navigate("/Login")
          })
     }
 
