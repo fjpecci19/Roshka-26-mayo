@@ -5,7 +5,6 @@ import axios from 'axios'
 
 function NuevaSolicitud() {
   const navigate = useNavigate()
-  console.log("hola")
 
   const handleNavigate = (path) => {
     navigate(path)

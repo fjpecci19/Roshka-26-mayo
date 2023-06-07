@@ -1,13 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios'
 import "./Solicitudes.css"
 
 function Solicitudes() {
   const navigate = useNavigate()
 
+  const token = useSelector((state) => state.token);
+
   const handleNavigate = (path) => {
+    if (!token){
+      alert("Inicia sesión primero")
+      navigate("/Login")
+    }else{
       navigate(path)
+    }
   }
 
     const [soli, setSoli] = useState([])
