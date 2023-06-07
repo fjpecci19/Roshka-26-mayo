@@ -10,12 +10,7 @@ function Solicitudes() {
   const token = useSelector((state) => state.token);
 
   const handleNavigate = (path) => {
-    if (!token){
-      alert("Inicia sesión primero")
-      navigate("/Login")
-    }else{
-      navigate(path)
-    }
+    navigate(path)
   }
 
     const [soli, setSoli] = useState([])
@@ -40,9 +35,6 @@ function Solicitudes() {
   return (
     <div>
       <div className="container">
-        <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
-        </div>
         <div className="column">
           <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
         </div>

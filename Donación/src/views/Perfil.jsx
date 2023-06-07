@@ -10,17 +10,13 @@ function Perfil() {
   const [enviar, enviada] = useState(true);
   const token = useSelector((state) => state.token);
 
-  useEffect(() => {
-    if (token) {
-      llamarALaApi();
-    } else {
-      alert('Inicia sesión para acceder a tu perfil');
-      navigate('/Login');
-    }
-  }, [token]); // Add token as a dependency
-
   const handleNavigate = (path) => {
-    navigate(path);
+    if (!token){
+      alert("Inicia sesión primero")
+      navigate("/Login")
+    }else{
+      navigate(path);
+    }
   };
 
   const cerrarSesion = () => {
@@ -60,14 +56,13 @@ function Perfil() {
       });
   };
 
+  useEffect(() => {
+    llamarALaApi()
+  }, []);
+
   return (
     <div>
       <div className="container">
-        <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("/Inicio")}>
-            Inicio
-          </Link>
-        </div>
         <div className="column">
           <Link className="Link" onClick={() => handleNavigate("/Mapa")}>
             Mapa

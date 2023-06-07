@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import "./Certificados.css"
 
 function Certificados() {
   const navigate = useNavigate()
+
+  const token = useSelector((state) => state.token);
 
   const handleNavigate = (path) => {
       navigate(path)
@@ -32,9 +35,6 @@ function Certificados() {
   return (
     <div>
       <div className="container">
-          <div className="column">
-            <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
-          </div>
           <div className="column">
             <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
           </div>

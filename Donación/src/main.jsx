@@ -17,10 +17,6 @@ import store from './store/store.js'
 
 const router = createBrowserRouter([
   {
-    path: "",
-    element: <App/>
-  },
-  {
     path: "Mapa",
     element: <Mapa/>
   },

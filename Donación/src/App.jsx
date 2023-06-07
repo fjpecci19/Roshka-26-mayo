@@ -13,9 +13,6 @@ function App() {
   <div>
     <div className="container">
       <div className="column">
-        <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
-      </div>
-      <div className="column">
         <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
       </div>
       <div className="column">
@@ -31,8 +28,6 @@ function App() {
         <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
       </div>
     </div>
-    <h2 className="titulo">¡Bienvenido a la página de donación de sangre!</h2>
-    <h2><img className="imag" src="images/apple.jpg"/></h2>
   </div>
   )
 }

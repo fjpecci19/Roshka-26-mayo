@@ -49,9 +49,6 @@ function Login() {
     <div>
         <div className="container">
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
-            </div>
-            <div className="column">
                 <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
             </div>
             <div className="column">

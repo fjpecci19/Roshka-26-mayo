@@ -34,9 +34,6 @@ function Mapa() {
     <div>
         <div className="container">
             <div className="column">
-                <Link className="Link" onClick={() => handleNavigate("/Inicio")}>Inicio</Link>
-            </div>
-            <div className="column">
                 <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
             </div>
             <div className="column">
@@ -54,20 +51,6 @@ function Mapa() {
         </div>
         <div>
             <h2 className="titulo">Mapa</h2>
-            <div className="accordion" id="accordionExample">
-                <div className="accordion-item">
-                    <h2 className="accordion-header">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
-                            <h2>Hola</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <MapContainer className="coso" center={position} zoom={5} scrollWheelZoom={false}>
             <TileLayer
