@@ -1,38 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import "./Solicitudes.css"
 import axios from 'axios'
+import "./Solicitudes.css"
 
 function Solicitudes() {
   const navigate = useNavigate()
-    console.log("hola")
-  const handleNavigate = (path) => {
-    navigate(path)
-  }
-  
-  const solicitudHandle = (event) => {
-    event.preventDefault()
-    const data = {
-      solicitud: event.target.elements.des.value,
-      fecha_limite: event.target.elements.fecha.value,
-      volumenes_necesarios: event.target.elements.vol.value,
-      nombre_apellido_donatario: event.target.elements.name.value,
-      cedula_donatario: event.target.elements.ci.value,
-      telefono_contacto: event.target.elements.tel.value,
-      tipo_sangre: event.target.elements.tipo.value,
-      establecimiento: event.target.elements.local.value
-    }
 
-    axios.post("http://192.168.16.90:8000/api/solicitudes/", data,
-     {headers: {Authorization: `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`}})
-     .then(result => {
-      console.log(result.data)
-      alert("Solicitud enviada")
-     }).catch(error => {
-      console.log(error)
-      alert("Ingrese un número para el tipo de sangre")
-     })
+  const handleNavigate = (path) => {
+      navigate(path)
   }
+
+    const [soli, setSoli] = useState([])
+
+    function llamarALaApi(){
+        axios.get("http://192.168.16.90:8000/api/solicitudes/", {
+        headers: {
+            'Authorization': `Bearer 680|mrW9sCo6iLXqcEj8PNYGqB5GGaglXeAWAS4i6lzG`
+        }
+        }).then(result => {
+            setSoli(result.data.data)
+            console.log(result.data.data)
+        }).catch(error => {
+            console.log(error)
+        })
+  }
+
+  useEffect(() => {
+    llamarALaApi()
+  }, [])
 
   return (
     <div>
@@ -56,28 +51,23 @@ function Solicitudes() {
           <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
         </div>
       </div>
-      <form onSubmit={solicitudHandle}>
-        <h2 className="titulo">Solicitudes</h2>
-        <h2 className="titulo"><Link className="linkeo" onClick={() => handleNavigate("/MisSolicitudes")}>Mis solicitudes</Link></h2><br />
-        <div className="camposs" >Nombre y apellido</div>
-        <h2><input className="input" name="name" type="text"/></h2><br />
-        <div className="camposs">Cédula</div>
-        <h2><input className="input" name="ci" type="text"/></h2><br />
-        <div className="camposs">Tipo de sangre</div>
-        <div className="camposs">(1: A+, 2: A-, 3: B+, 4: B-, 5: AB+, 6: AB-, 7: O+, 8: O-)</div>
-        <h2><input className="input" name="tipo" type="text"/></h2><br />
-        <div className="camposs">Establecimiento</div>
-        <h2><input className="input" name="local" type="text"/></h2><br />
-        <div className="camposs">Volumen</div>
-        <h2><input type="text" name="vol"/></h2><br />
-        <div className="camposs">Fecha límite</div>
-        <h2><input type="date" name="fecha"/></h2><br />
-        <div className="camposs">Teléfono</div>
-        <h2><input type="text" name="tel"/></h2><br />
-        <div className="camposs">Descripción</div>
-        <h2><input className="des" type="text" name="des"/></h2><br />
-        <br /><h2><button type="submit" className="buuttoon">Enviar</button></h2>
-      </form>
+      <h2 className="titulo">Solicitudes</h2>
+      <h2><button className="buttoon"><Link className="Linkk" onClick={() => handleNavigate("/MisSolicitudes")}>Nueva Solicitud</Link></button></h2>
+      <div className="certif">
+        <h2></h2>
+        {soli.map((solicitud, index) => (
+          <div key={index} className="titlee">Solicitud
+            <br /><br /><div className="datos"><span>Nombre y apellido:</span><span>{solicitud.nombre_apellido_donatario}</span></div>
+            <br /><div className="datos"><span>Cédula:</span><span>{solicitud.cedula_donatario}</span></div>
+            <br /><div className="datos"><span>Tipo de sangre:</span><span>{solicitud.tipo_sangre}</span></div>
+            <br /><div className="datos"><span>Establecimiento:</span><span>{solicitud.establecimiento}</span></div>
+            <br /><div className="datos"><span>Volumen:</span><span>{solicitud.volumenes_necesarios}</span></div>
+            <br /><div className="datos"><span>Fecha límite:</span><span>{solicitud.fecha_limite}</span></div>
+            <br /><div className="datos"><span>Teléfono:</span><span>{solicitud.telefono_contacto}</span></div>
+            <br /><div className="datos"><span>Descripción:</span><span>{solicitud.solicitud}</span></div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

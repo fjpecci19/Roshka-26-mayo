@@ -9,7 +9,7 @@ import Registros from "./views/Registro.jsx"
 import Contraseña from './views/Contraseña.jsx'
 import Certificados from './views/Certificados.jsx'
 import NewCertificado from './views/newcertificado.jsx'
-import MisSolicitudes from './views/MisSolicitudes.jsx'
+import MisSolicitudes from './views/NuevaSolicitud.jsx'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
 import { Provider } from 'react-redux'
