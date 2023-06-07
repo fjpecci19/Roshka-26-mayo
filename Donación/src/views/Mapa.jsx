@@ -11,7 +11,7 @@ function Mapa() {
 
     const verif = () => {
         if (!token){
-          alert("Inicia sesión primero")
+          alert("Inicia sesión primero para acceder a tu perfil")
           navigate("/Login")
         }else{
           navigate("/Perfil")
@@ -20,7 +20,7 @@ function Mapa() {
 
     const verifdos = () => {
         if (!token){
-          alert("Inicia sesión primero")
+          alert("Inicia sesión para acceder a tus certificados")
           navigate("/Login")
         }else{
           navigate("/Certificados")

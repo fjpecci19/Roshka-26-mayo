@@ -9,7 +9,7 @@ function Solicitudes() {
 
   const verif = () => {
     if (!token){
-      alert("Inicia sesión para crear una nueva solicitud")
+      alert("Inicia sesión para acceder a tu perfil")
       navigate("/Login")
     }else{
       navigate("/MisSolicitudes")
@@ -18,7 +18,7 @@ function Solicitudes() {
 
   const verifdos = () => {
     if (!token){
-      alert("Inicia sesión primero")
+      alert("Inicia sesión para acceder a tus certificados")
       navigate("/Login")
     }else{
       navigate("/Certificados")
