@@ -12,9 +12,7 @@ function App() {
   return(
   <div>
     <div className="container">
-      <div className="column">
-        <Link className="Link" onClick={() => handleNavigate("/App")}>Inicio</Link>
-      </div>
+
       <div className="column">
         <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
       </div>
