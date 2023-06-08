@@ -17,6 +17,10 @@ import store from './store/store.js'
 
 const router = createBrowserRouter([
   {
+    path: "http://localhost:5173",
+    element: <App/>
+  },
+  {
     path: "Mapa",
     element: <Mapa/>
   },

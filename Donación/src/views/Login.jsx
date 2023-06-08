@@ -13,7 +13,7 @@ function Login() {
     const handleNavigate = (path) => {
         navigate(path)
     }
-    
+
     const verif = () => {
         if (!token){
           alert("Inicia sesión para acceder a tu perfil")
@@ -66,6 +66,9 @@ function Login() {
     return (
     <div>
         <div className="container">
+            <div className="column">
+                <Link className="Link" onClick={() => handleNavigate("http://localhost:5173")}>Inicio</Link>
+            </div>
             <div className="column">
                 <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
             </div>
