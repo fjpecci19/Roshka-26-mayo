@@ -48,9 +48,6 @@ function Registros() {
     <div>
       <div className="container">
         <div className="column">
-          <Link className="Link" onClick={() => handleNavigate("http://localhost:5173")}>Inicio</Link>
-        </div>
-        <div className="column">
           <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
         </div>
         <div className="column">

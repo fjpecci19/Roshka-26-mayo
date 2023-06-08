@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Mapa from './views/Mapa.jsx'
 import Solicitudes from './views/Solicitudes.jsx'
 import Perfil from './views/Perfil.jsx'
 import Login from './views/Login.jsx'
@@ -17,12 +16,8 @@ import store from './store/store.js'
 
 const router = createBrowserRouter([
   {
-    path: "http://localhost:5173",
+    path: "/",
     element: <App/>
-  },
-  {
-    path: "Mapa",
-    element: <Mapa/>
   },
   {
     path: "Solicitudes",
