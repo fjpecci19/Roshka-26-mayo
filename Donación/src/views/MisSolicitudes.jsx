@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import "./Solicitudes.css"
 import axios from 'axios'
 
-function NuevaSolicitud() {
+function MisSolicitudes() {
   const navigate = useNavigate()
 
   const handleNavigate = (path) => {
@@ -84,4 +84,4 @@ function NuevaSolicitud() {
   )
 }
 
-export default NuevaSolicitud
+export default MisSolicitudes

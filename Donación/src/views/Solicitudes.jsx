@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios'
 import "./Solicitudes.css"
 
@@ -12,7 +12,7 @@ function Solicitudes() {
       alert("Inicia sesión para acceder a tu perfil")
       navigate("/Login")
     }else{
-      navigate("/MisSolicitudes")
+      navigate("/Perfil")
     }
   }
 
@@ -22,6 +22,15 @@ function Solicitudes() {
       navigate("/Login")
     }else{
       navigate("/Certificados")
+    }
+  }
+
+  const veriftres = () => {
+    if (!token){
+      alert("Inicia sesión para generar una nueva solicitud")
+      navigate("/Login")
+    }else{
+      navigate("/MisSolicitudes")
     }
   }
 
@@ -70,7 +79,7 @@ function Solicitudes() {
         </div>
       </div>
       <h2 className="titulo">Solicitudes</h2>
-      <h2><button className="buttoon"><Link className="Linkk" onClick={verif}>Nueva Solicitud</Link></button></h2>
+      <h2><button className="buttoon"><Link className="Linkk" onClick={veriftres}>Nueva Solicitud</Link></button></h2>
       <div className="certif">
         <h2></h2>
         {soli.map((solicitud, index) => (

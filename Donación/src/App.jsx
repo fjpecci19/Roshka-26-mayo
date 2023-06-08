@@ -13,6 +13,9 @@ function App() {
   <div>
     <div className="container">
       <div className="column">
+        <Link className="Link" onClick={() => handleNavigate("/App")}>Inicio</Link>
+      </div>
+      <div className="column">
         <Link className="Link" onClick={() => handleNavigate("/Mapa")}>Mapa</Link>
       </div>
       <div className="column">
@@ -27,6 +30,9 @@ function App() {
       <div className="column">
         <Link className="Link" onClick={() => handleNavigate("/Certificados")}>Certificados</Link>
       </div>
+    </div>
+    <div>
+      
     </div>
   </div>
   )

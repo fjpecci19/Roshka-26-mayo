@@ -8,6 +8,12 @@ import { useDispatch } from 'react-redux'
 function Login() {
     const token = useSelector((state) => state.token);
 
+    const navigate = useNavigate()
+
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
+    
     const verif = () => {
         if (!token){
           alert("Inicia sesión para acceder a tu perfil")
@@ -24,12 +30,6 @@ function Login() {
         }
     }
     const [mostrar, editar] = useState(false)
-
-    const navigate = useNavigate()
-
-    const handleNavigate = (path) => {
-        navigate(path)
-    }
 
     const mostrarContraseña = () => {
         editar(!mostrar)
